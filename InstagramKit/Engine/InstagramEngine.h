@@ -112,15 +112,9 @@ NS_ASSUME_NONNULL_BEGIN
      withSuccess:(InstagramMediaObjectBlock)success
          failure:(nullable InstagramFailureBlock)failure;
 
-
-/**
- *  Get a list of currently popular media.
- *
- *  @param success  Provides an array of Media objects and Pagination info.
- *  @param failure  Provides an error and a server status code.
- */
-- (void)getPopularMediaWithSuccess:(InstagramMediaBlock)success
-                           failure:(nullable InstagramFailureBlock)failure;
+- (void)getMediaWithShortcode:(NSString *)shortCode
+                  withSuccess:(InstagramMediaObjectBlock)success
+                      failure:(InstagramFailureBlock)failure;
 
 
 #pragma mark -

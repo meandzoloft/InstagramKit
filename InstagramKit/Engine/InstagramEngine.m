@@ -377,17 +377,16 @@
           failure:failure];
 }
 
-
-- (void)getPopularMediaWithSuccess:(InstagramMediaBlock)success
-                           failure:(InstagramFailureBlock)failure
+- (void)getMediaWithShortcode:(NSString *)shortCode
+                  withSuccess:(InstagramMediaObjectBlock)success
+                      failure:(InstagramFailureBlock)failure
 {
-    [self getPaginatedPath:@"media/popular"
-                parameters:nil
-             responseModel:[InstagramMedia class]
-                   success:success
-                   failure:failure];
+    [self getPath:[NSString stringWithFormat:@"media/shortcode/%@",shortCode]
+       parameters:nil
+    responseModel:[InstagramMedia class]
+          success:success
+          failure:failure];
 }
-
 
 - (void)getMediaAtLocation:(CLLocationCoordinate2D)location
                withSuccess:(InstagramMediaBlock)success
